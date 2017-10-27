@@ -21,7 +21,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         Log.d(DEBUG, "onCreate()");
         setContentView(R.layout.activity_main);
         if (savedInstanceState != null) {
-            String s = new String(savedInstanceState.getCharArray(KEY));
+            String s = new String(savedInstanceState.getString(KEY));
             Log.d(DEBUG, s);
         }
 
@@ -36,7 +36,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     protected void onSaveInstanceState(Bundle savedInstance) {
         super.onSaveInstanceState(savedInstance);
         Log.d(DEBUG, "onSavedInstanceState()");
-        savedInstance.putCharArray(KEY, DATA.toCharArray());
+        savedInstance.putString(KEY, DATA);
     }
 
     protected void onStart() {
